@@ -1,35 +1,47 @@
 package com.bridgelabz.AddressBook.ManagementSystem;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class AddressBookMain {
     public static void main(String[] args) {
-        System.out.println("Address Book Management System");
-        AddressBook addressBook = new AddressBook();
+        HashMap<String, AddressBook> map = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Address Book Management System");
+
+
         boolean exist = true;
-        do {
-            System.out.println("Enter options:\n1) To add contact \n2) :To edit contact \n3):To display Contacts \n4):To delete contact \n5):To exit ");
+        while (exist) {
+            AddressBook addressBook = new AddressBook();
+            System.out.println("Enter address book name");
+            String addressBookName = scanner.next().toLowerCase();
+            if (map.containsKey(addressBookName)) {
+                System.out.println("address book already exist");
+            } else {
+                map.put(addressBookName, addressBook);
+            }
+            System.out.println("Enter options:\n1) To add contact \n2) :To edit contact \n3):To display Contacts \n4):To delete contact \n5):To exit");
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
-                    addressBook.addContact();
+                    map.get(addressBookName).addContact();
                     break;
                 case 2:
-                    addressBook.editContact();
+                    map.get(addressBookName).editContact();
                     break;
                 case 3:
-                    addressBook.displayContacts();
+                    map.get(addressBookName).displayContacts();
                     break;
                 case 4:
-                    addressBook.deleteContact();
+                    map.get(addressBookName).deleteContact();
                     break;
                 case 5:
                     exist = false;
                 default:
                     break;
             }
-        } while (exist);
+        }
+        System.out.println(map);
     }
 }
 

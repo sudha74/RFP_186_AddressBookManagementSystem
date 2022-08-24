@@ -7,6 +7,13 @@ public class AddressBook {
     ArrayList<Contacts> list = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
+    @Override
+    public String toString() {
+        return "AddressBook{" +
+                "list=" + list +
+                '}';
+    }
+
     void addContact() {
         Contacts contact = new Contacts();
         System.out.println("Enter firstName");
