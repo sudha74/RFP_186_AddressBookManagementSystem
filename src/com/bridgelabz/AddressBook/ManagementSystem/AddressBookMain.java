@@ -8,6 +8,8 @@ public class AddressBookMain {
         System.out.println(addressBook.display());
         addressBook.editContact();
         System.out.println(addressBook.display());
+        addressBook.deleteContact();
+        System.out.println(addressBook.display());
 
     }
 }
