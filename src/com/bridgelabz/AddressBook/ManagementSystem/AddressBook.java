@@ -24,7 +24,42 @@ public class AddressBook {
         System.out.println("Enter phoneNumber");
         contact.setPhoneNumber(scanner.nextLong());
         System.out.println("Enter email address");
-        contact.setEmai(scanner.next());
+        contact.setEmail(scanner.next());
+    }
+
+    void editContact() {
+        System.out.println("Enter the first name of person to edit");
+        String firstName = scanner.next();
+        if (firstName.equals(contact.getFirstName())) {
+            System.out.println("Edit the details of person");
+            System.out.println("Enter firstName");
+            contact.setFirstName(scanner.next());
+
+            System.out.println("Enter lastName");
+            contact.setLastName(scanner.next());
+
+            System.out.println("Enter email");
+            contact.setEmail(scanner.next());
+
+            System.out.println("Enter city");
+            contact.setCity(scanner.next());
+
+            System.out.println("Enter state");
+            contact.setState(scanner.next());
+
+            System.out.println("Enter address");
+            scanner.nextLine();
+            contact.setAddress(scanner.nextLine());
+
+            System.out.println("Enter ZipCode");
+            contact.setZip(scanner.nextInt());
+
+            System.out.println("Enter phoneNumber");
+            contact.setPhoneNumber(scanner.nextLong());
+
+        } else {
+            System.out.println("person not found");
+        }
     }
 
     Contacts display() {

@@ -66,12 +66,12 @@ public class Contacts {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getEmai() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmai(String emai) {
-        this.email = emai;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -84,8 +84,7 @@ public class Contacts {
                 ", state='" + state + '\'' +
                 ", zip=" + zip +
                 ", phoneNumber=" + phoneNumber +
-                ", emai='" + email + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
-
 }
